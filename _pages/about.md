@@ -20,16 +20,6 @@ I am passionate about **developing AI systems that can tackle challenging data s
 
 ---
 
-## 🧠 Research Interests  
-
-- **Speech & Language Technologies** – ASR, language models, multilingual NLP
-- **Information Access & Retrieval** – speech and text systems for cross-lingual search and understanding
-- **Multimodal Generative AI** – vision, language, speech 
-- **Trustworthy AI** – privacy, interpretability, fairness  
-- **AI for Social Good** – bridging research and real-world impact  
-
----
-
 ## 👨🏻‍🔬 Selected Experience  
 
 **Finastra (2025 – Present)**  
@@ -47,6 +37,7 @@ During my internship at NTU’s Speech Lab, I developed an **automatic speech de
 
 - 📝 Publications: 4× first-author (NTU) + 1× co-author (CVPR 2025)  
 - 🛠 Systems: LLM-based financial assistant (Finastra), BOE-ViT for 3D cryo-ET (CMU), Speech de-identification pipeline (NTU)  
+
 
 ---
 
