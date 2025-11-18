@@ -9,7 +9,7 @@ redirect_from:
 
 ## Hi! I’m Priyanshu Dhingra  
 
-👨🏻‍💻 Associate Software Engineer – Data Science & AI at Finastra.  
+👨🏻‍💻 Data Scientist at Finastra.  
 Graduated from Rajiv Gandhi Institute of Petroleum Technology, India
 
 ---
@@ -23,7 +23,7 @@ I am passionate about **developing AI systems that can tackle challenging data s
 ## 👨🏻‍🔬 Selected Experience  
 
 **Finastra (2025 – Present)**  
-I work as an Associate Software Engineer (Data Science & AI), where I am building **LLM-powered systems for financial operations**. My contributions include automating test pipelines, developing SQL/data validation checks, and extending vector store coverage with contextual samples. These efforts have streamlined workflows, improved reliability, and increased LLM response accuracy.
+I work as a Data Scientist, where I am building **LLM-powered systems for financial operations**. My contributions include automating test pipelines, developing SQL/data validation checks, and extending vector store coverage with contextual samples. These efforts have streamlined workflows, improved reliability, and increased LLM response accuracy.
 
 **Carnegie Mellon University (2024 – 2025)**  
 As a Research Intern, I worked on **BOE-ViT**: a vision transformer for 3D subtomogram alignment, resulting in a paper at **CVPR 2025**. I contributed to the development and evaluation of the **Polyshift** and **MARE** modules, created synthetic data pipelines, generated 2D-slice visualizations, and debugged large-scale training code. My work contributed to experiments achieving **77% lower rotation error and 62% lower translation error** at low SNR.  
