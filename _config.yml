@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Priyanshu's Homepage"
 title_separator          : "-"
 name                     : &name "Priyanshu Dhingra"
-description              : &description "personal description"
+description              : &description "Priyanshu Dhingra: MScAC (AI) student at the University of Toronto. Machine learning research and LLM systems."
 url                      : https://priyanshudhingra.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -21,11 +21,11 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Priyanshu Dhingra"
   pronouns         : # example: "she/her"  
-  bio              : "Data Scientist, Finastra"
-  location         : "Bengaluru, India"
+  bio              : "MScAC Student (AI), University of Toronto"
+  location         : "Toronto, Canada"
   # employer         : "Data Scientist, Finastra"
   uri              : # URL
   email            : "priyanshudhingra1@gmail.com" 
@@ -56,11 +56,11 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : # Username
+  instagram        : "priyanshu.51907"
   lastfm           : # Username
   linkedin         : "priyanshu-dhingra"
   mastodon         : # URL
-  medium           : # URL
+  medium           : "https://medium.com/@priyanshudhingra1"
   pinterest        : # Username
   soundcloud       : # Username
   steam            : # Username
