@@ -29,8 +29,60 @@
 
 <!-- For all browsers -->
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v=theme-toggle-20261005-1">
+
+<style>
+  /* Keep the mode switch visible even if a cached compiled stylesheet is served. */
+  #theme-toggle {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    top: 14px !important;
+    right: 24px !important;
+    display: grid !important;
+    width: 44px !important;
+    height: 44px !important;
+    place-items: center !important;
+    padding: 0 !important;
+    color: #46515c !important;
+    background: #fff !important;
+    border: 1px solid #cbd2d8 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22) !important;
+    cursor: pointer !important;
+  }
+
+  #theme-toggle:focus-visible {
+    outline: 3px solid #52adc8 !important;
+    outline-offset: 3px !important;
+  }
+
+  #theme-toggle .theme-toggle__icon {
+    width: 22px !important;
+    height: 22px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+    stroke-width: 1.8 !important;
+  }
+
+  #theme-toggle .theme-toggle__sun { display: none !important; }
+  #theme-toggle .theme-toggle__moon { display: block !important; }
+
+  :root[data-theme="dark"] #theme-toggle {
+    color: #ffd166 !important;
+    background: #292e33 !important;
+    border-color: #59636d !important;
+  }
+
+  :root[data-theme="dark"] #theme-toggle .theme-toggle__sun { display: block !important; }
+  :root[data-theme="dark"] #theme-toggle .theme-toggle__moon { display: none !important; }
+
+  @media (max-width: 600px) {
+    #theme-toggle { top: 10px !important; right: 12px !important; }
+  }
+</style>
 
 
 <meta http-equiv="cleartype" content="on">
-<script src="{{ base_path }}/assets/js/darkmode-toggle.js" defer></script>
+<script src="{{ base_path }}/assets/js/darkmode-toggle.js?v=theme-toggle-20261005-1" defer></script>
