@@ -2,17 +2,6 @@
 (function() {
   var storageKey = 'theme';
 
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.style.colorScheme = theme;
-    try {
-      localStorage.setItem(storageKey, theme);
-    } catch (error) {
-      // Theme switching still works when browser storage is unavailable.
-    }
-    updateToggle(theme);
-  }
-
   function updateToggle(theme) {
     var button = document.getElementById('theme-toggle');
     if (!button) return;
@@ -39,14 +28,36 @@
   document.documentElement.setAttribute('data-theme', initialTheme);
   document.documentElement.style.colorScheme = initialTheme;
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var button = document.getElementById('theme-toggle');
-    if (button) {
-      updateToggle(document.documentElement.getAttribute('data-theme'));
-      button.addEventListener('click', function() {
-        var nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        setTheme(nextTheme);
-      });
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch (error) {
+      // Theme switching still works when browser storage is unavailable.
     }
-  });
+    updateToggle(theme);
+  }
+
+  function bindThemeToggle() {
+    var button = document.getElementById('theme-toggle');
+    if (!button || button.getAttribute('data-theme-bound') === 'true') return;
+
+    button.setAttribute('data-theme-bound', 'true');
+    updateToggle(document.documentElement.getAttribute('data-theme'));
+    button.addEventListener('click', function() {
+      var nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindThemeToggle);
+  } else {
+    bindThemeToggle();
+  }
+
+  window.toggleTheme = function() {
+    setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  };
 })();
