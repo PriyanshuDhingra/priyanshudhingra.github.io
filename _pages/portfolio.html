@@ -11,7 +11,7 @@ author_profile: true
     <article class="project-card">
       {% if project.cover_image %}
         <a class="project-card__cover project-card__cover--{{ project.cover_style | default: 'cover' }}" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ project.title }} on GitHub">
-          <img src="{{ project.cover_image }}" alt="{{ project.cover_alt | escape }}" loading="lazy">
+          <img src="{% if project.cover_image contains '://' %}{{ project.cover_image }}{% else %}{{ project.cover_image | relative_url }}{% endif %}" alt="{{ project.cover_alt | escape }}" loading="lazy">
         </a>
       {% endif %}
       <div class="project-card__body">
