@@ -18,10 +18,11 @@
     if (!button) return;
 
     var isDark = theme === 'dark';
+    var label = isDark ? 'Light mode' : 'Dark mode';
     button.setAttribute('aria-pressed', String(isDark));
-    button.setAttribute('aria-label', 'Switch to ' + (isDark ? 'light' : 'dark') + ' mode');
+    button.setAttribute('aria-label', label);
     button.querySelector('.theme-toggle__icon').textContent = isDark ? '☀' : '☾';
-    button.querySelector('.theme-toggle__label').textContent = isDark ? 'Light mode' : 'Dark mode';
+    button.querySelector('.theme-toggle__label').textContent = label;
   }
 
   function readSavedTheme() {

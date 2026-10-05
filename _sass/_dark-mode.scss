@@ -84,9 +84,6 @@ html[data-theme="dark"] {
   }
 
   .sidebar .author__name,
-  .sidebar .author__bio,
-  .sidebar .author__urls,
-  .sidebar .author__urls a,
   .page__meta,
   .page__date,
   .archive__item-excerpt,
@@ -96,6 +93,33 @@ html[data-theme="dark"] {
   .pagination a,
   .pagination--pager {
     color: var(--theme-muted);
+  }
+
+  .sidebar .author__bio,
+  .sidebar .author__urls,
+  .sidebar .author__urls a {
+    color: var(--theme-text);
+  }
+
+  .sidebar .author__name { color: #f4f6f8; }
+
+  .sidebar .author__urls a:hover { color: var(--theme-link); }
+
+  .sidebar .author__urls .fab,
+  .sidebar .author__urls .fas,
+  .sidebar .author__urls .far,
+  .sidebar .author__urls .ai {
+    color: var(--theme-link);
+  }
+
+  .sidebar .author__urls .fa-orcid { color: #a6ce39; }
+  .sidebar .author__urls .fa-linkedin { color: #0a8fca; }
+  .sidebar .author__urls .fa-instagram { color: #78a9ff; }
+
+  .sidebar .author__urls-wrapper .btn {
+    color: var(--theme-text);
+    background: var(--theme-raised);
+    border-color: var(--theme-border);
   }
 
   .page__footer {
