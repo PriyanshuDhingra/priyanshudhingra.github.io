@@ -181,45 +181,51 @@ html[data-theme="dark"] {
   .pagination--pager { border-color: var(--theme-border); }
 }
 
-.theme-toggle-item {
-  white-space: nowrap;
-}
-
-/* Keep the theme control visible when the greedy navigation collapses links. */
-.greedy-nav .visible-links .theme-toggle-item {
-  display: table-cell;
-}
-
-.greedy-nav .hidden-links .theme-toggle-item {
-  display: block;
-}
-
 .theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35em;
-  margin: 0 0.65rem;
-  padding: 0.45em 0.7em;
-  color: $masthead-link-color;
-  background: transparent;
-  border: 1px solid $border-color;
-  border-radius: 999px;
-  font-family: $sans-serif;
-  font-size: $type-size-6;
-  line-height: 1.4;
+  position: fixed;
+  z-index: 1000;
+  top: 14px;
+  right: 24px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  padding: 0;
+  color: #4c5965;
+  background: #fff;
+  border: 1px solid #cbd2d8;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(#000, 0.18);
   cursor: pointer;
+  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease;
 
-  &:hover { color: $masthead-link-color-hover; }
-  &:focus-visible { outline: 2px solid $info-color; outline-offset: 2px; }
+  &:hover { transform: translateY(-1px); }
+  &:focus-visible { outline: 3px solid $info-color; outline-offset: 3px; }
+
+  .theme-toggle__icon {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  .theme-toggle__moon { display: none; }
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  color: #ffd166;
+  background: #292e33;
+  border-color: #59636d;
+
+  .theme-toggle__sun { display: none; }
+  .theme-toggle__moon { display: block; }
 }
 
 @media (max-width: 600px) {
-  .theme-toggle { margin: 0 0.35rem; }
-  .theme-toggle__label { display: none; }
-
-  .greedy-nav .visible-links .theme-toggle-item {
-    display: table-cell;
-  }
+  .theme-toggle { top: 10px; right: 12px; width: 40px; height: 40px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
