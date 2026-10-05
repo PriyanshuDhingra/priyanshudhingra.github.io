@@ -1,25 +1,51 @@
 // Dark mode toggle script
 (function() {
+  var storageKey = 'theme';
+
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    document.documentElement.style.colorScheme = theme;
+    try {
+      localStorage.setItem(storageKey, theme);
+    } catch (error) {
+      // Theme switching still works when browser storage is unavailable.
+    }
+    updateToggle(theme);
   }
 
-  function toggleTheme() {
-    var currentTheme = document.documentElement.getAttribute('data-theme');
-    setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  function updateToggle(theme) {
+    var button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    var isDark = theme === 'dark';
+    button.setAttribute('aria-pressed', String(isDark));
+    button.setAttribute('aria-label', 'Switch to ' + (isDark ? 'light' : 'dark') + ' mode');
+    button.querySelector('.theme-toggle__icon').textContent = isDark ? '☀' : '☾';
+    button.querySelector('.theme-toggle__label').textContent = isDark ? 'Light mode' : 'Dark mode';
   }
 
-  // Set theme on page load
-  var savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setTheme('dark');
-  } else {
-    setTheme('light');
+  function readSavedTheme() {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
   }
 
-  // Expose toggle function globally
-  window.toggleTheme = toggleTheme;
+  var savedTheme = readSavedTheme();
+  var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var initialTheme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : (systemPrefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  document.documentElement.style.colorScheme = initialTheme;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('theme-toggle');
+    if (button) {
+      updateToggle(document.documentElement.getAttribute('data-theme'));
+      button.addEventListener('click', function() {
+        var nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        setTheme(nextTheme);
+      });
+    }
+  });
 })();

@@ -12,6 +12,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
+  (function() {
+    var theme = null;
+    try { theme = localStorage.getItem('theme'); } catch (error) {}
+    if (theme !== 'dark' && theme !== 'light') {
+      theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.style.colorScheme = theme;
+  })();
+</script>
+
+<script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
@@ -21,3 +33,4 @@
 
 
 <meta http-equiv="cleartype" content="on">
+<script src="{{ base_path }}/assets/js/darkmode-toggle.js" defer></script>

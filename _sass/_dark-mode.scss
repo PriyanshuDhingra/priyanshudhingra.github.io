@@ -1,0 +1,194 @@
+/* Dark theme overrides. The default palette remains unchanged. */
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-background: #171a1d;
+  --theme-surface: #202428;
+  --theme-raised: #292e33;
+  --theme-text: #e4e8eb;
+  --theme-muted: #b2bac2;
+  --theme-border: #3c444c;
+  --theme-link: #78c7e2;
+  --theme-link-hover: #a1def1;
+}
+
+html[data-theme="dark"] {
+  background: var(--theme-background);
+}
+
+html[data-theme="dark"] body {
+  color: var(--theme-text);
+  background: var(--theme-background);
+}
+
+html[data-theme="dark"] {
+  a { color: var(--theme-link); }
+  a:hover { color: var(--theme-link-hover); }
+
+  blockquote,
+  .page__content blockquote {
+    color: var(--theme-muted);
+    border-left-color: var(--theme-border);
+  }
+
+  hr,
+  .page__content hr,
+  .page__content table,
+  .page__content th,
+  .page__content td,
+  .pagination a,
+  .page__content + .pagination,
+  .page__meta + .pagination,
+  .page__share + .pagination,
+  .page__comments + .pagination {
+    border-color: var(--theme-border);
+  }
+
+  .masthead,
+  .greedy-nav,
+  .greedy-nav .hidden-links {
+    background: var(--theme-background);
+  }
+
+  .greedy-nav a,
+  .greedy-nav .visible-links a,
+  .greedy-nav .hidden-links a {
+    color: var(--theme-text);
+
+    &:hover { color: var(--theme-link); }
+  }
+
+  .greedy-nav .hidden-links:before { border-color: var(--theme-border) transparent; }
+  .greedy-nav .hidden-links:after { border-color: var(--theme-background) transparent; }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    margin: 0 0.65rem;
+    padding: 0.45em 0.7em;
+    color: var(--theme-text);
+    background: var(--theme-raised);
+    border: 1px solid var(--theme-border);
+    border-radius: 999px;
+    font: inherit;
+    font-size: $type-size-6;
+    line-height: 1.4;
+    cursor: pointer;
+
+    &:hover { color: var(--theme-link); }
+    &:focus-visible { outline: 2px solid var(--theme-link); outline-offset: 2px; }
+  }
+
+  .sidebar .author__name,
+  .sidebar .author__bio,
+  .sidebar .author__urls,
+  .sidebar .author__urls a,
+  .page__meta,
+  .page__date,
+  .archive__item-excerpt,
+  .archive__item-excerpt p,
+  .taxonomy__index,
+  .breadcrumbs,
+  .pagination a,
+  .pagination--pager {
+    color: var(--theme-muted);
+  }
+
+  .page__footer {
+    color: var(--theme-muted);
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+  }
+
+  table,
+  .page__content table,
+  .page__content table tr,
+  .page__content table td {
+    color: var(--theme-text);
+    background: var(--theme-background);
+  }
+
+  thead,
+  .page__content thead,
+  .page__content table th {
+    color: var(--theme-text);
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+  }
+
+  tbody tr:nth-child(odd) { background: var(--theme-surface); }
+
+  div.highlighter-rouge,
+  figure.highlight,
+  pre,
+  code {
+    color: var(--theme-text);
+    background-color: var(--theme-surface);
+    border-color: var(--theme-border);
+  }
+
+  div.highlighter-rouge:before,
+  figure.highlight:before { background-color: var(--theme-raised); }
+
+  input,
+  textarea,
+  select {
+    color: var(--theme-text);
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+  }
+
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--success,
+  .notice--danger {
+    color: var(--theme-text);
+    background: var(--theme-surface);
+    border-color: var(--theme-border);
+  }
+
+  .pagination a,
+  .pagination--pager { border-color: var(--theme-border); }
+}
+
+.theme-toggle-item {
+  white-space: nowrap;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0 0.65rem;
+  padding: 0.45em 0.7em;
+  color: $masthead-link-color;
+  background: transparent;
+  border: 1px solid $border-color;
+  border-radius: 999px;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  line-height: 1.4;
+  cursor: pointer;
+
+  &:hover { color: $masthead-link-color-hover; }
+  &:focus-visible { outline: 2px solid $info-color; outline-offset: 2px; }
+}
+
+@media (max-width: 600px) {
+  .theme-toggle { margin: 0 0.35rem; }
+  .theme-toggle__label { display: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-theme] body,
+  html[data-theme] .masthead,
+  html[data-theme] .page__footer {
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+}
