@@ -29,7 +29,7 @@
 
 <!-- For all browsers -->
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v=theme-toggle-20261017-1">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v=theme-toggle-20261017-2">
 
 <style>
   /* Keep the mode switch visible even if a cached compiled stylesheet is served. */
@@ -79,7 +79,18 @@
   :root[data-theme="dark"] #theme-toggle .theme-toggle__moon { display: none !important; }
 
   @media (max-width: 600px) {
-    #theme-toggle { top: 10px !important; right: 60px !important; }
+    /* Reserve a separate slot so navigation measures only the space it can use. */
+    .masthead__menu { padding-right: 64px; }
+    #site-nav { min-width: 0; }
+    #site-nav .masthead__menu-item--lg { padding-right: 0; }
+    #site-nav .masthead__menu-item--lg a {
+      max-width: calc(100vw - 180px);
+      margin-right: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    #theme-toggle { top: 10px !important; right: 12px !important; }
   }
 </style>
 
