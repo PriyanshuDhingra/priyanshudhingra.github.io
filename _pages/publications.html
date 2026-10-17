@@ -1,36 +1,43 @@
 ---
-layout: archive
+layout: showcase
 title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<header class="page-intro">
+  <p class="eyebrow">Research / Selected writing</p>
+  <h1>Publications<span>.</span></h1>
+  <p class="hero-lead">Learning from less.<br>Building models that do more.</p>
+  <p class="hero-description">My work explores speech privacy, synthetic data, and geometric deep learning for 3D vision.</p>
+  {% if site.author.googlescholar %}<a class="quiet-link" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Full profile on Google Scholar <span aria-hidden="true">↗</span></a>{% endif %}
+</header>
 
-{% include base_path %}
+{% assign first_author_papers = site.publications | where: 'author_role', 'First author' %}
+<div class="publication-overview"><span><strong>{{ site.publications.size }}</strong> publications</span><span><strong>{{ first_author_papers.size }}</strong> first-author papers</span><span>Speech & language · Computer vision</span></div>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+{% assign sorted_papers = site.publications | sort: 'date' | reverse %}
+{% assign publication_years = sorted_papers | group_by_exp: 'paper', "paper.date | date: '%Y'" %}
+{% for year in publication_years %}
+  <section class="publication-year" aria-labelledby="year-{{ year.name }}">
+    <div class="year-heading"><h2 id="year-{{ year.name }}">{{ year.name }}</h2><span>{{ year.items.size }} {% if year.items.size == 1 %}paper{% else %}papers{% endif %}</span></div>
+    <div class="publication-list">
+      {% for paper in year.items %}
+        <article class="publication-card">
+          <div class="publication-meta"><span class="venue-badge">{{ paper.venue_short | default: paper.venue }}</span><span>{{ paper.author_role }}</span><span class="publication-topic">{{ paper.research_area }}</span></div>
+          <h3><a href="{{ paper.external_link | default: paper.url }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a></h3>
+          <p class="publication-venue">{{ paper.venue }}</p>
+          <p class="publication-summary">{{ paper.summary | default: paper.excerpt | strip_html | truncatewords: 45 }}</p>
+          <div class="publication-actions">
+            {% if paper.external_link %}<a class="paper-link" href="{{ paper.external_link }}" target="_blank" rel="noopener noreferrer">View paper <span aria-hidden="true">↗</span></a>{% endif %}
+            {% if paper.pdf %}<a class="paper-link paper-link--muted" href="{{ paper.pdf | replace: 'http:', 'https:' }}" target="_blank" rel="noopener noreferrer">PDF <span aria-hidden="true">↓</span></a>{% endif %}
+          </div>
+          {% if paper.excerpt %}<details class="content-details"><summary>Read abstract</summary><div class="abstract-content">{{ paper.excerpt | markdownify }}</div></details>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
 
 
 

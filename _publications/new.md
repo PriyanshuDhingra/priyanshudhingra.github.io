@@ -5,7 +5,11 @@ collection: publications
 category: conferences
 permalink: /publication/new
 excerpt: 'This work addresses the challenge of limited real-world speech data in speech de-identification, the process of removing Personally Identifiable Information (PII). We formulate speech de-identification as a named entity recognition (NER) task specifically for spoken English. To overcome data scarcity and enhance NER performance, we propose a data augmentation approach. This approach leverages a large language model to generate synthetic speech style text data enriched with diverse PII entities. The generated data undergoes an iterative process using a customized NER model for semi-automatic PII annotation. Our analysis demonstrates the effectiveness of this data augmentation strategy in significantly improving NER performance on spoken language text. Furthermore, to gain deeper insights into the specific errors made during NER, we employ performance analysis using alternative evaluation metrics.'
-date: 15-07-2024
+date: 2024-07-15
+venue_short: "IALP 2024"
+author_role: "First author"
+research_area: "Speech & language"
+summary: "Synthetic spoken-language text enriched with PII entities, paired with semi-automatic NER annotation, to improve speech de-identification when real training data is limited."
 venue: 'IEEE International Conference on Asian Language Processing (IALP)'
 # slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
 external_link: 'https://ieeexplore.ieee.org/abstract/document/10661176'

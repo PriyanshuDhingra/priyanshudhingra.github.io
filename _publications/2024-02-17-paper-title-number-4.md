@@ -5,7 +5,11 @@ collection: publications
 category: conferences
 permalink: /publication/2024-02-17-paper-title-number-4
 excerpt: 'This paper addresses the challenge of data scarcity in speech de-identification by introducing a novel, fully automated data augmentation method leveraging large language models. Our approach overcomes the limitations of human annotation, enabling the creation of extensive training datasets. To enhance de-identification performance, we compare pipeline and end-to-end models. While the pipeline approach sequentially applies speech recognition and named entity recognition, the end-to-end model jointly learns these tasks. Experimental results demonstrate the effectiveness of our data augmentation strategy and the superiority of the end-to-end model in improving PII detection accuracy and robustness.'
-date: 28-09-2024
+date: 2024-09-28
+venue_short: "ICAICTA 2024"
+author_role: "First author"
+research_area: "Speech & language"
+summary: "An automated LLM-based augmentation approach for scarce speech privacy datasets, evaluated across pipeline and end-to-end speech de-identification models."
 venue: 'IEEE International Conference on Advanced Informatics: Concept, Theory and Application (ICAICTA)'
 # slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
 external_link: 'https://ieeexplore.ieee.org/abstract/document/10762997'

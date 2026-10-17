@@ -1,0 +1,66 @@
+---
+layout: showcase
+permalink: /
+title: "Priyanshu Dhingra"
+description: "Machine learning research and reliable AI systems. MScAC (AI) at the University of Toronto."
+author_profile: true
+redirect_from:
+  - /about/
+  - /about.html
+---
+
+<section class="home-hero" aria-labelledby="intro-title">
+  <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> MScAC (AI) · University of Toronto</p>
+  <h1 id="intro-title">Hi, I'm<br><span>Priyanshu Dhingra.</span></h1>
+  <p class="hero-lead">From machine learning research<br class="desktop-break"> to reliable, real-world AI.</p>
+  <p class="hero-description">I work across LLM agents, computer vision, and speech processing. Previously, I built production AI systems at Teciem (formerly Finastra) and explored research at Carnegie Mellon University and NTU.</p>
+  <div class="action-row">
+    <a class="action-link action-link--primary" href="{{ '/portfolio/' | relative_url }}">Explore my projects <span aria-hidden="true">↗</span></a>
+    <a class="action-link" href="{{ '/publications/' | relative_url }}">Read my research <span aria-hidden="true">→</span></a>
+    <a class="quiet-link" href="{{ '/files/Priyanshu_CV.pdf' | relative_url }}">Download CV <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
+
+<div class="impact-strip" aria-label="Selected work at a glance">
+  <div><strong>{{ site.publications.size }}</strong><span>Peer-reviewed publications</span></div>
+  <div><strong>2,000+</strong><span>QA cases evaluated at Teciem</span></div>
+  <div><strong>30%</strong><span>Fewer LLM tokens per query</span></div>
+</div>
+
+<section class="home-section" aria-labelledby="focus-title">
+  <div class="section-heading"><p class="eyebrow">01 / Research & engineering</p><h2 id="focus-title">What draws my curiosity</h2></div>
+  <div class="focus-grid">
+    {% for focus in site.data.home.focus %}
+      <article class="focus-card"><span class="card-index" aria-hidden="true">0{{ forloop.index }}</span><h3>{{ focus.title }}</h3><p>{{ focus.description }}</p></article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="experience-title">
+  <div class="section-heading"><p class="eyebrow">02 / Along the way</p><h2 id="experience-title">Experience, with impact</h2></div>
+  <div class="experience-list">
+    {% for experience in site.data.home.experience %}
+      <article class="experience-card">
+        <div class="experience-heading"><div><p class="experience-role">{{ experience.role }}</p><h3>{{ experience.organization }}</h3><p class="experience-context">{{ experience.context }}</p></div><span class="date-label">{{ experience.period }}</span></div>
+        <p class="experience-summary">{{ experience.summary }}</p>
+        <ul class="tag-list" aria-label="Highlights">{% for highlight in experience.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>
+        <details class="content-details"><summary>Behind the work</summary><p>{{ experience.detail }}</p></details>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="education-title">
+  <div class="section-heading"><p class="eyebrow">03 / Always learning</p><h2 id="education-title">Education</h2></div>
+  <div class="education-grid">
+    {% for education in site.data.home.education %}
+      <article class="education-card"><p class="date-label">{{ education.period }}</p><h3>{{ education.institution }}</h3><p class="education-degree">{{ education.degree }}</p><p>{{ education.detail }}</p>{% if education.note %}<p class="education-note">{{ education.note }}</p>{% endif %}</article>
+    {% endfor %}
+  </div>
+  <div class="toolkit"><span class="eyebrow">Tools I build with</span><ul class="tag-list">{% for tool in site.data.home.toolkit %}<li>{{ tool }}</li>{% endfor %}</ul></div>
+</section>
+
+<section class="connect-panel" aria-labelledby="connect-title">
+  <div><p class="eyebrow">A conversation starts somewhere</p><h2 id="connect-title">Let's connect.</h2><p>I'm interested in conversations about ML research and building useful AI systems.</p></div>
+  <div class="action-row"><a class="action-link action-link--primary" href="mailto:{{ site.author.email }}">Say hello <span aria-hidden="true">↗</span></a><a class="quiet-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn <span aria-hidden="true">↗</span></a></div>
+</section>

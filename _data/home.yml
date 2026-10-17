@@ -1,0 +1,59 @@
+focus:
+  - title: "Reliable LLM systems"
+    description: "Agents that work with real databases, respect access boundaries, and can be evaluated against the tasks that matter."
+  - title: "Speech & language"
+    description: "Privacy-aware speech processing, entity-aware ASR, and synthetic data for learning when labeled examples are scarce."
+  - title: "Vision & geometry"
+    description: "Deep learning for 3D data, with an interest in equivariance, representation learning, and challenging scientific imagery."
+
+experience:
+  - organization: "Teciem"
+    context: "Formerly Finastra · Treasury & Capital Markets"
+    role: "AI Software Engineer"
+    period: "Jan 2025 – Jul 2026"
+    summary: "Built the agent layer of Kondor Assistant, a production financial assistant that helps traders and analysts work with a treasury platform in plain English."
+    highlights:
+      - "30% fewer tokens per query"
+      - "96% response accuracy"
+      - "2,000+ QA cases"
+    detail: "Developed graph-based join retrieval with LangGraph, LangChain, and Azure OpenAI; implemented user-specific access controls on AI-generated SQL; and replaced LLM-generated hyperlinks with a deterministic pipeline that reduced hyperlink test failures by approximately 90%. Built an evaluation-data pipeline that converted 2,000+ business cases into structured JSON datasets, reducing manual preparation effort by approximately 95%, alongside regression tests for prohibited writes, out-of-scope requests, and link eligibility."
+  - organization: "Carnegie Mellon University"
+    context: "Computer vision research"
+    role: "Computer Vision Research Intern"
+    period: "Sep 2024 – Jan 2025"
+    summary: "Contributed to BOE-ViT, a self-supervised vision transformer for 3D subtomogram alignment in cryo-electron tomography, published at CVPR 2025."
+    highlights:
+      - "CVPR 2025"
+      - "3D cryo-ET"
+      - "PyTorch"
+    detail: "Contributed to Polyshift and Multi-Axis Rotation Encoding (MARE) implementation and experiments. At SNR 0.01, the team achieved 77% lower rotation error and 62% lower translation error than Gum-Net. Implemented Fourier-domain missing-wedge masking, investigated interpolation-based correction, and built synthetic subtomogram generation and 2D-slice visualization pipelines across five macromolecular structures and four noise levels."
+  - organization: "Nanyang Technological University"
+    context: "Speech privacy & de-identification"
+    role: "Speech & Language AI Intern"
+    period: "Mar 2024 – Aug 2024"
+    summary: "Developed speech de-identification systems for Singapore English, combining entity-aware ASR with LLM-generated synthetic speech data. This work led to four first-author publications."
+    highlights:
+      - "0.79 PII detection F1"
+      - "4 first-author papers"
+      - "Whisper + WhisperSpeech"
+    detail: "Fine-tuned Whisper to jointly transcribe speech and identify personally identifiable information. Paired LLM-generated text with WhisperSpeech TTS to expand the text corpus from 992 to 3,592 sentences. Evaluated pipeline and end-to-end approaches; the best end-to-end configuration achieved 14.8% higher PII detection F1 than the best pipeline. Published at IALP, TENCON, and ICAICTA 2024, and in IJALP 2025."
+
+education:
+  - institution: "University of Toronto"
+    degree: "Master of Science in Applied Computing"
+    detail: "Artificial Intelligence concentration"
+    period: "Sep 2026 – Dec 2027 (expected)"
+    note: "Ongoing: Neural Networks and Deep Learning; Imitation Learning for Robotics."
+  - institution: "Rajiv Gandhi Institute of Petroleum Technology"
+    degree: "Bachelor of Technology in Information Technology"
+    detail: "Rae Bareli, India · CPI 9.36/10"
+    period: "Dec 2021 – May 2025"
+
+toolkit:
+  - Python
+  - PyTorch
+  - LangGraph
+  - LangChain
+  - FastAPI
+  - SQL
+  - Docker

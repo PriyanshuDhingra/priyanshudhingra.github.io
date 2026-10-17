@@ -5,7 +5,11 @@ collection: publications
 category: conferences
 permalink: /publication/2015-10-01-paper-title-number-3
 excerpt: 'This paper proposes SpeeDF, a novel three-step framework for anonymizing speech data, particularly focusing on Singaporean English (Singlish). SpeeDF tackles the challenge of protecting less-studied Personally Identifiable Information (PII) like NRIC and passport numbers, which often go overlooked by traditional de-identification methods. Unlike approaches focused solely on entity extraction, SpeeDF leverages a combination of automatic speech recognition (ASR), named entity recognition (NER), and information anonymization. This comprehensive approach ensures thorough PII redaction while preserving the naturalness and usability of the anonymized speech data for research and various downstream applications.'
-date: 01-12-2024
+date: 2024-12-01
+venue_short: "TENCON 2024"
+author_role: "First author"
+research_area: "Speech & language"
+summary: "A three-stage speech de-identification framework for Singapore English, combining ASR, named entity recognition, and anonymization to redact sensitive information while retaining usable speech."
 venue: 'TENCON 2024-2024 IEEE Region 10 Conference (TENCON)'
 # slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
 external_link: 'https://ieeexplore.ieee.org/abstract/document/10902957'

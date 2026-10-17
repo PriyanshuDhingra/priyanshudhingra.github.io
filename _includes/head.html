@@ -30,6 +30,7 @@
 <!-- For all browsers -->
 
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v=theme-toggle-20261017-3">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/presentation.css?v=20261017-1">
 
 <style>
   /* Keep the mode switch visible even if a cached compiled stylesheet is served. */
@@ -48,16 +49,16 @@
     height: 44px !important;
     place-items: center !important;
     padding: 0 !important;
-    color: #46515c !important;
-    background: #fff !important;
-    border: 1px solid #cbd2d8 !important;
+    color: var(--site-accent, #46515c) !important;
+    background: var(--site-surface, #fff) !important;
+    border: 1px solid var(--site-border, #cbd2d8) !important;
     border-radius: 50% !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22) !important;
     cursor: pointer !important;
   }
 
   #theme-toggle:focus-visible {
-    outline: 3px solid #52adc8 !important;
+    outline: 3px solid var(--site-accent, #52adc8) !important;
     outline-offset: 3px !important;
   }
 
@@ -75,9 +76,9 @@
   #theme-toggle .theme-toggle__moon { display: block !important; }
 
   :root[data-theme="dark"] #theme-toggle {
-    color: #ffd166 !important;
-    background: #292e33 !important;
-    border-color: #59636d !important;
+    color: var(--site-accent, #ffd166) !important;
+    background: var(--site-surface, #292e33) !important;
+    border-color: var(--site-border, #59636d) !important;
   }
 
   :root[data-theme="dark"] #theme-toggle .theme-toggle__sun { display: block !important; }
