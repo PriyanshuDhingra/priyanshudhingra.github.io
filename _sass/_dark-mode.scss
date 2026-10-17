@@ -181,23 +181,32 @@ html[data-theme="dark"] {
 .theme-toggle {
   position: relative;
   z-index: 1;
-  flex: 0 0 44px;
+  flex: 0 0 76px;
   margin: 0;
-  display: grid;
-  width: 44px;
+  display: block;
+  width: 76px;
   height: 44px;
-  place-items: center;
   padding: 0;
-  color: #4c5965;
-  background: #fff;
+  color: #aa7008;
+  background: var(--site-switch-track, #dedbd2);
   border: 1px solid #cbd2d8;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(#000, 0.18);
+  border-radius: 999px;
   cursor: pointer;
-  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease;
-
-  &:hover { transform: translateY(-1px); }
   &:focus-visible { outline: 3px solid $info-color; outline-offset: 3px; }
+
+  .theme-toggle__thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(#000, 0.16);
+    transform: translateX(0);
+  }
 
   .theme-toggle__icon {
     width: 21px;
@@ -209,23 +218,23 @@ html[data-theme="dark"] {
     stroke-width: 1.8;
   }
 
-  .theme-toggle__sun { display: none; }
-  .theme-toggle__moon { display: block; }
+  .theme-toggle__sun { display: block; }
+  .theme-toggle__moon { display: none; }
 }
 
 :root[data-theme="dark"] .theme-toggle {
-  color: #ffd166;
-  background: #292e33;
+  color: #283548;
   border-color: #59636d;
 
-  .theme-toggle__sun { display: block; }
-  .theme-toggle__moon { display: none; }
+  .theme-toggle__thumb { transform: translateX(32px); }
+  .theme-toggle__sun { display: none; }
+  .theme-toggle__moon { display: block; }
 }
 
 @media (max-width: 600px) {
   #site-nav .masthead__menu-item--lg { padding-right: 0; }
   #site-nav .masthead__menu-item--lg a {
-    max-width: calc(100vw - 180px);
+    max-width: calc(100vw - 212px);
     margin-right: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -234,6 +243,7 @@ html[data-theme="dark"] {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .theme-toggle__thumb { transition: transform 180ms ease; }
   html[data-theme] body,
   html[data-theme] .masthead,
   html[data-theme] .page__footer {

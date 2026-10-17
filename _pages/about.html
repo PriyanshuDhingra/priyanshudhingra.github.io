@@ -11,21 +11,17 @@ redirect_from:
 
 <section class="home-hero" aria-labelledby="intro-title">
   <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> MScAC (AI) · University of Toronto</p>
-  <h1 id="intro-title">Hi, I'm<br><span>Priyanshu Dhingra.</span></h1>
+  <h1 id="intro-title"><span class="hero-greeting">Hi, I'm</span>Priyanshu Dhingra<span class="hero-period">.</span></h1>
   <p class="hero-lead">From machine learning research<br class="desktop-break"> to reliable, real-world AI.</p>
   <p class="hero-description">I work across LLM agents, computer vision, and speech processing. Previously, I built production AI systems at Teciem (formerly Finastra) and explored research at Carnegie Mellon University and NTU.</p>
   <div class="action-row">
-    <a class="action-link action-link--primary" href="{{ '/portfolio/' | relative_url }}">Explore my projects <span aria-hidden="true">↗</span></a>
-    <a class="action-link" href="{{ '/publications/' | relative_url }}">Read my research <span aria-hidden="true">→</span></a>
-    <a class="quiet-link" href="{{ '/files/Priyanshu_CV.pdf' | relative_url }}">Download CV <span aria-hidden="true">↓</span></a>
+    <a class="action-link action-link--primary" href="{{ '/portfolio/' | relative_url }}">Explore my projects <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    <a class="action-link" href="{{ '/publications/' | relative_url }}">Read my research <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+    <a class="action-link" href="{{ '/files/Priyanshu_CV.pdf' | relative_url }}">Download CV <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a>
   </div>
 </section>
 
-<div class="impact-strip" aria-label="Selected work at a glance">
-  <div><strong>{{ site.publications.size }}</strong><span>Peer-reviewed publications</span></div>
-  <div><strong>2,000+</strong><span>QA cases evaluated at Teciem</span></div>
-  <div><strong>30%</strong><span>Fewer LLM tokens per query</span></div>
-</div>
+<a class="research-highlight" href="{{ '/publications/' | relative_url }}"><span class="research-highlight__count">{{ site.publications.size }}</span><span><strong>Peer-reviewed publications</strong><span>Including work published at CVPR 2025</span></span><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
 
 <section class="home-section" aria-labelledby="focus-title">
   <div class="section-heading"><p class="eyebrow">01 / Research & engineering</p><h2 id="focus-title">What draws my curiosity</h2></div>
@@ -62,5 +58,5 @@ redirect_from:
 
 <section class="connect-panel" aria-labelledby="connect-title">
   <div><p class="eyebrow">A conversation starts somewhere</p><h2 id="connect-title">Let's connect.</h2><p>I'm interested in conversations about ML research and building useful AI systems.</p></div>
-  <div class="action-row"><a class="action-link action-link--primary" href="mailto:{{ site.author.email }}">Say hello <span aria-hidden="true">↗</span></a><a class="quiet-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn <span aria-hidden="true">↗</span></a></div>
+  <div class="action-row"><a class="action-link action-link--primary" href="mailto:{{ site.author.email }}">Say hello <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a><a class="action-link" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn <svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
 </section>

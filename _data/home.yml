@@ -1,10 +1,10 @@
 focus:
   - title: "Reliable LLM systems"
     description: "Agents that work with real databases, respect access boundaries, and can be evaluated against the tasks that matter."
-  - title: "Speech & language"
-    description: "Privacy-aware speech processing, entity-aware ASR, and synthetic data for learning when labeled examples are scarce."
-  - title: "Vision & geometry"
-    description: "Deep learning for 3D data, with an interest in equivariance, representation learning, and challenging scientific imagery."
+  - title: "Language & understanding"
+    description: "How models make sense of human language, connect information, and turn complex questions into useful answers."
+  - title: "Visual intelligence"
+    description: "Learning from images and visual data to understand the world and solve practical problems."
 
 experience:
   - organization: "Teciem"

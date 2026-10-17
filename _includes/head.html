@@ -30,7 +30,7 @@
 <!-- For all browsers -->
 
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css?v=theme-toggle-20261017-3">
-<link rel="stylesheet" href="{{ base_path }}/assets/css/presentation.css?v=20261017-1">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/presentation.css?v=20261017-5">
 
 <style>
   /* Keep the mode switch visible even if a cached compiled stylesheet is served. */
@@ -42,19 +42,32 @@
     z-index: 1 !important;
     top: auto !important;
     right: auto !important;
-    flex: 0 0 44px !important;
+    flex: 0 0 76px !important;
     margin: 0 !important;
-    display: grid !important;
-    width: 44px !important;
+    display: block !important;
+    width: 76px !important;
     height: 44px !important;
-    place-items: center !important;
     padding: 0 !important;
-    color: var(--site-accent, #46515c) !important;
-    background: var(--site-surface, #fff) !important;
+    color: #aa7008 !important;
+    background: var(--site-switch-track, #dedbd2) !important;
     border: 1px solid var(--site-border, #cbd2d8) !important;
-    border-radius: 50% !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22) !important;
+    border-radius: 999px !important;
+    box-shadow: none !important;
     cursor: pointer !important;
+  }
+
+  #theme-toggle .theme-toggle__thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+    transform: translateX(0);
   }
 
   #theme-toggle:focus-visible {
@@ -72,22 +85,26 @@
     stroke-width: 1.8 !important;
   }
 
-  #theme-toggle .theme-toggle__sun { display: none !important; }
-  #theme-toggle .theme-toggle__moon { display: block !important; }
+  #theme-toggle .theme-toggle__sun { display: block !important; }
+  #theme-toggle .theme-toggle__moon { display: none !important; }
 
   :root[data-theme="dark"] #theme-toggle {
-    color: var(--site-accent, #ffd166) !important;
-    background: var(--site-surface, #292e33) !important;
+    color: #283548 !important;
     border-color: var(--site-border, #59636d) !important;
   }
 
-  :root[data-theme="dark"] #theme-toggle .theme-toggle__sun { display: block !important; }
-  :root[data-theme="dark"] #theme-toggle .theme-toggle__moon { display: none !important; }
+  :root[data-theme="dark"] #theme-toggle .theme-toggle__thumb { transform: translateX(32px); }
+  :root[data-theme="dark"] #theme-toggle .theme-toggle__sun { display: none !important; }
+  :root[data-theme="dark"] #theme-toggle .theme-toggle__moon { display: block !important; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    #theme-toggle .theme-toggle__thumb { transition: transform 180ms ease; }
+  }
 
   @media (max-width: 600px) {
     #site-nav .masthead__menu-item--lg { padding-right: 0; }
     #site-nav .masthead__menu-item--lg a {
-      max-width: calc(100vw - 180px);
+      max-width: calc(100vw - 212px);
       margin-right: 0;
       overflow: hidden;
       text-overflow: ellipsis;
